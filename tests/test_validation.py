@@ -40,6 +40,12 @@ def test_structures_module_validity(xsd_schema):
         BASEDIR.joinpath('xrrl-structures-1.xsd'))
 
 
+def test_model_validity(xsd_schema):
+    assert_schema_from_path(
+        xsd_schema,
+        BASEDIR.joinpath('xrrl-model-1.xsd'))
+
+
 def test_basic_rule(xrrl_schema):
     doc = parse(TESTDIR.joinpath('rule.xrrl'))
     xrrl_schema.assert_(doc)
