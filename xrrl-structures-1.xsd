@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:annotation>
+        <xs:documentation>
+          XRRL Structures Module
+          This is the XML Schema Structure module for XRRL. The
+          following types are declared here:
+
+            * xrrl
+            * rule
+            * code
+            * proposedrule
+            * nonrule
+            * provision
+            * provisiongroup
+                
+        </xs:documentation>
+    </xs:annotation>
+    <!-- Start Code Document Type -->
+
+    <xs:attributeGroup name="xrrl.addressed.attlist">
+        <xs:attribute name="address" type="xs:string"/>
+    </xs:attributeGroup>
+
+    <xs:attributeGroup name="xrrl.provision.attlist">
+        <xs:attributeGroup ref="xhtml.Common.attrib" />
+        <xs:attributeGroup ref="xrrl.addressed.attlist" />
+    </xs:attributeGroup>
+
+    <xs:group name="xrrl.provision.content">
+        <xs:sequence>
+            <xs:group ref="xrrl.ProvisionTags" />
+            <xs:group ref="xhtml.Block.mix" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+    </xs:group>
+    <xs:complexType name="xrrl.provision.type">
+        <xs:group ref="xrrl.provision.content" />
+        <xs:attributeGroup ref="xrrl.provision.attlist" />
+    </xs:complexType>
+
+    <xs:attributeGroup name="xrrl.grouping.attlist">
+        <xs:attributeGroup ref="xhtml.Common.attrib" />
+        <xs:attributeGroup ref="xrrl.addressed.attlist" />
+    </xs:attributeGroup>
+
+    <xs:group name="xrrl.grouping.content">
+        <xs:sequence>
+            <xs:group ref="xrrl.ProvisionTags.class" />
+            <xs:group
+                ref="xhtml.GroupedProvisions.class"
+                minOccurs="0"
+                maxOccurs="1"
+                />
+        </xs:sequence>
+    </xs:group>
+    <xs:complexType name="xrrl.grouping.type">
+        <xs:group ref="xrrl.grouping.content" />
+        <xs:attributeGroup ref="xrrl.grouping.attlist" />
+    </xs:complexType>
+
+
+    <xs:attributeGroup name="xrrl.code.attlist">
+        <xs:attributeGroup ref="xhtml.Common.attrib" />
+        <xs:attribute name="address" type="xs:string" />
+    </xs:attributeGroup>
+    <xs:group name="xrrl.code.content">
+        <xs:sequence>
+            <xs:group
+                ref="xrrl.GroupedProvisions.class"
+                minOccurs="0"
+                maxOccurs="unbounded"
+                />
+        </xs:sequence>
+    </xs:group>
+
+    <xs:complexType name="xrrl.code.type">
+        <xs:group ref="xrrl.code.content" />
+        <xs:attributeGroup ref="xrrl.code.attlist" />
+    </xs:complexType>
+
+    <!-- Start Rule Document Type -->
+    <xs:attributeGroup name="xrrl.rule.attlist">
+        <xs:attributeGroup ref="xhtml.Common.attrib" />
+    </xs:attributeGroup>
+    <xs:group name="xrrl.rule.content">
+        <xs:sequence>
+        </xs:sequence>
+    </xs:group>
+    <xs:complexType name="xrrl.rule.type">
+        <xs:group ref="xrrl.rule.content" />
+        <xs:attributeGroup ref="xrrl.rule.attlist" />
+    </xs:complexType>
+
+
+    <xs:attributeGroup name="xrrl.proposedrule.attlist">
+        <xs:attributeGroup ref="xhtml.Common.attrib" />
+    </xs:attributeGroup>
+    <xs:group name="xrrl.proposedrule.content">
+        <xs:sequence>
+        </xs:sequence>
+    </xs:group>
+    <xs:complexType name="xrrl.proposedrule.type">
+        <xs:group ref="xrrl.proposedrule.content" />
+        <xs:attributeGroup ref="xrrl.proposedrule.attlist" />
+    </xs:complexType>
+
+    <xs:attributeGroup name="xrrl.nonrule.attlist">
+        <xs:attributeGroup ref="xhtml.Common.attrib" />
+    </xs:attributeGroup>
+    <xs:group name="xrrl.nonrule.content">
+        <xs:sequence>
+
+        </xs:sequence>
+    </xs:group>
+    <xs:complexType name="xrrl.nonrule.type">
+        <xs:group ref="xrrl.nonrule.content" />
+        <xs:attributeGroup ref="xrrl.nonrule.attlist" />
+    </xs:complexType>
+
+
+    <xs:group name="xrrl.xrrl.content">
+        <xs:sequence>
+            <xs:group ref="xrrl.Documents.class" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:group>
+
+    <xs:attributeGroup name="xrrl.xrrl.attlist">
+        <xs:attributeGroup ref="xhtml.Common.attrib" />
+    </xs:attributeGroup>
+
+    <xs:complexType name="xrrl.xrrl.type">
+        <xs:group ref="xrrl.xrrl.content" />
+        <xs:attributeGroup ref="xrrl.xrrl.attlist" />
+    </xs:complexType>
+
+</xs:schema>

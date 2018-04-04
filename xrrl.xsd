@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://quantgov.org/xrrl"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:xh11d="http://www.w3.org/1999/xhtml/datatypes/"
+           xmlns="http://quantgov.org/xrrl"
+           blockDefault="#all">
+
+  <xs:annotation>
+    <xs:documentation>
+      This is the XML Schema driver for XRRL 0.1
+      Please use this namespace for XHTML elements:
+          "http://quantgov.org/xrrl"
+    </xs:documentation>
+  </xs:annotation>
+
+  <xs:annotation>
+    <xs:documentation>
+      This is XRRL
+
+      XRRL is based on XHTML,
+
+      XHTML is Copyright &#169;1998-2008 World Wide Web Consortium
+      (Massachusetts Institute of Technology, European Research Consortium
+       for Informatics and Mathematics, Keio University).
+      All Rights Reserved.
+
+      Permission to use, copy, modify and distribute the XHTML Schema
+      modules and their accompanying xs:documentation for any purpose
+      and without fee is hereby granted in perpetuity, provided that the above
+      copyright notice and this paragraph appear in all copies.
+      The copyright holders make no representation about the suitability of
+      these XML Schema modules for any purpose.
+
+      They are provided "as is" without expressed or implied warranty.
+    </xs:documentation>
+  </xs:annotation>
+
+  <xs:annotation>
+    <xs:documentation>
+      This is the Schema Driver file for XRRL
+      Document Type
+
+      This schema includes
+        + imports external schemas (xrrl.xsd)
+        + refedines (and include)s schema modules for XHTML
+          Basic 1.1 Document Type.
+        + includes Schema for Named content model for the
+          XHTML Basic 1.1 Document Type
+
+      XHTML Basic 1.1 Document Type includes the following Modules
+
+        XHTML Core modules (Required for XHTML Family Conformance)
+            +  text
+            +  hypertext
+            +  lists
+            +  structure (redefined)
+
+        Other XHTML modules
+           +  Image
+           +  Table
+    </xs:documentation>
+  </xs:annotation>
+
+  <xs:import namespace="http://www.w3.org/XML/1998/namespace"
+             schemaLocation="http://www.w3.org/2001/xml.xsd">
+    <xs:annotation>
+      <xs:documentation>
+        This import brings in the XML namespace attributes
+        The XML attributes are used by various modules
+      </xs:documentation>
+     </xs:annotation>
+  </xs:import>
+
+  <xs:include schemaLocation="xrrl-model-1.xsd">
+    <xs:annotation>
+      <xs:documentation>
+        Document Model module for the XHTML Basic 1.1 Document Type
+        This schema file defines all named models used by XHTML
+        Modularization Framework for XHTML Basic 1.1 Document Type
+      </xs:documentation>
+    </xs:annotation>
+  </xs:include>
+  
+  <xs:include schemaLocation="xrrl-modules-1.xsd">
+    <xs:annotation>
+      <xs:documentation>
+        Schema that includes the modules (and redefinitions)
+        for XHTML Basic 1.1 Document Type.
+      </xs:documentation>
+    </xs:annotation>
+  </xs:include>  
+
+</xs:schema>
