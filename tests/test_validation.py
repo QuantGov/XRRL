@@ -16,14 +16,30 @@ def get_schema(path):
     return lxml.etree.XMLSchema(parse(path))
 
 
+def assert_schema_from_path(schema, path):
+    schema.assert_(parse(path))
+
+
 @pytest.fixture
 def xrrl_schema():
     return get_schema(XRRL_PATH)
 
 
-def test_xsd_validity():
-    get_schema(TESTDIR.joinpath('XMLSchema.xsd')).assert_(parse(XRRL_PATH))
+@pytest.fixture
+def xsd_schema():
+    return get_schema(TESTDIR.joinpath('XMLSchema.xsd'))
+
+
+def test_xsd_validity(xsd_schema):
+    assert_schema_from_path(xsd_schema, XRRL_PATH)
+
+
+def test_structures_module_validity(xsd_schema):
+    assert_schema_from_path(
+        xsd_schema,
+        BASEDIR.joinpath('xrrl-structures-1.xsd'))
 
 
 def test_basic_rule(xrrl_schema):
-    xrrl_schema.assert_(parse(TESTDIR.joinpath('rule.xrrl')))
+    doc = parse(TESTDIR.joinpath('rule.xrrl'))
+    xrrl_schema.assert_(doc)

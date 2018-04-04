@@ -1,10 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<xrrl
-    xmlns="http://quantgov.org"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://quantgov.org xrrl.xsd"
-    >
-    <document type="ruleType">
-    </document>
+<?xml version="1.0" encoding="utf-8"?>
+<xrrl xmlns="http://quantgov.org/xrrl"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://quantgov.org/xrrl.xsd">
+    <rule></rule>
 </xrrl>
-
