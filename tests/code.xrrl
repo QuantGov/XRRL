@@ -3,10 +3,12 @@
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="http://quantgov.org/xrrl.xsd">
     <code>
-        <title>
-            Part 25 - Universal Identifier and System for Awards Management
-        </title>
-        <orglevel address="123" level="Subpart A">
+        <description>
+            <h1>
+                Part 25 - Universal Identifier and System for Awards Management
+            </h1>
+        </description>
+        <orglevel address="123" level="Subpart">
             <description>
                 <p>
                     This part provides guidance to agencies to establish:
