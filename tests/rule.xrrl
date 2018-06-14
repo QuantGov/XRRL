@@ -2,5 +2,21 @@
 <xrrl xmlns="http://quantgov.org/xrrl"
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="http://quantgov.org/xrrl.xsd">
-    <rule></rule>
+    <rule>
+        <metadata>
+            <p>
+                test
+            </p>
+        </metadata>
+        <description>
+            <p>
+                test
+            </p>
+        </description>
+        <provision address='1234'>
+            <p>
+                test
+            </p>
+        </provision>
+    </rule>
 </xrrl>
