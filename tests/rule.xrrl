@@ -3,7 +3,7 @@
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="http://quantgov.org/xrrl.xsd">
     <rule>
-        <properties>
+        <description>
             <h3>
                 Final Regulatory Flexibility Act Analysis
             </h3>
@@ -13,19 +13,26 @@ xsi:schemaLocation="http://quantgov.org/xrrl.xsd">
                 the final rule on small entities. Accordingly, AMS has
                 considered the economic impact of this action on such entities.
             </p>
-        </properties>
+        </description>
         <provision address='1234'>
             <properties>
-                <date>
-                    2018-01-01
-                </date>
+                <dates>
+                    <date kind='effective_date'>
+                        '2018-01-01'
+                    </date>
+                </dates>
+                <tags kind='industries' standard='naics2007'>
+                    <tag id='111'>Crop Production</tag>
+                </tags>
+                <definitions>
+                    <p>
+                        Fiscal year means the 12-month period beginning with
+                        November 1 of any year and ending with October 31 of
+                        the following year, or such other period as determined
+                        by the Board and approved by the Secretary.
+                    </p>
+                </definitions>
             </properties>
-            <p>
-                Fiscal year means the 12-month period beginning with November 1
-                of any year and ending with October 31 of the following year,
-                or such other period as determined by the Board and approved by
-                the Secretary.
-            </p>
         </provision>
         <description>
             <p>
