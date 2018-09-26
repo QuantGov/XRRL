@@ -27,12 +27,12 @@
         <xs:sequence>
             <xs:group
                 ref="xhtml.Flow.mix"
-                minOccurs="1"
+                minOccurs="0"
                 maxOccurs="unbounded"
                 />
         </xs:sequence>
     </xs:group>
-    <xs:complexType name="xrrl.description.type">
+    <xs:complexType name="xrrl.description.type" mixed="true">
         <xs:group ref="xrrl.description.content" />
         <xs:attributeGroup ref="xrrl.description.attlist" />
     </xs:complexType>
@@ -52,7 +52,7 @@
         </xs:sequence>
     </xs:group>
 
-    <xs:complexType name="xrrl.tag.type">
+    <xs:complexType name="xrrl.tag.type" mixed="true" >
         <xs:group ref="xrrl.tag.content" />
         <xs:attributeGroup ref="xrrl.tag.attlist" />
     </xs:complexType>
@@ -64,12 +64,10 @@
 
     <xs:group name="xrrl.tags.content">
         <xs:sequence>
-            <xs:element
-                name="tag"
-                type="xrrl.tag.type"
-                minOccurs="0" maxOccurs="unbounded" />
+            <xs:element ref="tag" minOccurs="0" maxOccurs="unbounded" />
         </xs:sequence>
     </xs:group>
+
     <xs:complexType name="xrrl.tags.type">
         <xs:group ref="xrrl.tags.content" />
         <xs:attributeGroup ref="xrrl.tags.attlist" />
@@ -77,16 +75,17 @@
 
     <xs:attributeGroup name="xrrl.analysis.attlist">
         <xs:attributeGroup ref="xhtml.Common.attrib" />
-        <xs:attribute name="required" type="xs:boolean" use="required" />
+        <xs:attribute name="required" type="xs:boolean" />
         <xs:attribute name="href" type="xs:string"/>
     </xs:attributeGroup>
 
     <xs:group name="xrrl.analysis.content">
         <xs:sequence>
-            <xs:element
-                name="tag"
-                type="xrrl.tag.type"
-                minOccurs="0" maxOccurs="unbounded" />
+            <xs:group
+                ref="xhtml.Flow.mix"
+                minOccurs="0"
+                maxOccurs="unbounded"
+                />
         </xs:sequence>
     </xs:group>
     <xs:complexType name="xrrl.analysis.type">
@@ -126,11 +125,7 @@
 
     <xs:group name="xrrl.provision.content">
         <xs:sequence>
-            <xs:element
-                name="properties"
-                type="xrrl.properties.type"
-                minOccurs="0"
-                />
+            <xs:element ref="properties" minOccurs="0" />
             <xs:group ref="xhtml.Flow.mix" minOccurs="0" maxOccurs="1" />
         </xs:sequence>
     </xs:group>
@@ -147,12 +142,11 @@
 
     <xs:group name="xrrl.block.content">
         <xs:sequence>
-            <xs:element
-                name="properties"
-                type="xrrl.properties.type"
+            <xs:group
+                ref="xrrl.Content.class"
                 minOccurs="0"
+                maxOccurs="unbounded"
                 />
-            <xs:group ref="xhtml.Flow.mix" minOccurs="0" maxOccurs="1" />
         </xs:sequence>
     </xs:group>
 

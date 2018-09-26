@@ -312,18 +312,22 @@
             <xs:group ref="xhtml.Misc.class" />
         </xs:choice>
     </xs:group>
+
+    <xs:element name="properties" type="xrrl.properties.type" />
+    <xs:element name="tag" type="xrrl.tag.type" />
+    <xs:element name="xrrl" type="xrrl.xrrl.type" />
+
     <xs:group name="xrrl.Documents.class">
         <xs:choice>
             <xs:element name="code" type="xrrl.code.type" />
             <xs:element name="rule" type="xrrl.rule.type" />
-            <xs:element name="proposedrule"
-                type="xrrl.proposedrule.type" />
+            <xs:element name="proposedrule" type="xrrl.proposedrule.type" />
             <xs:element name="nonrule" type="xrrl.nonrule.type" />
         </xs:choice>
     </xs:group>
     <xs:group name="xrrl.Content.class">
         <xs:choice>
-            <xs:element name="properties" type="xrrl.properties.type" />
+            <xs:element ref="properties" />
             <xs:element name="provision" type="xrrl.provision.type" />
             <xs:element name="block" type="xrrl.block.type" />
         </xs:choice>
@@ -335,5 +339,4 @@
             <xs:element name="analysis" type="xrrl.analysis.type" />
         </xs:choice>
     </xs:group>
-    <xs:element name="xrrl" type="xrrl.xrrl.type" />
 </xs:schema>
