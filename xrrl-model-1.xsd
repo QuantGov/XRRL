@@ -313,9 +313,10 @@
         </xs:choice>
     </xs:group>
 
+    <!-- XRRL Element Definitions -->
     <xs:element name="properties" type="xrrl.properties.type" />
     <xs:element name="tag" type="xrrl.tag.type" />
-    <xs:element name="xrrl" type="xrrl.xrrl.type" />
+    <xs:element name="introduction" type="xrrl.provision.type" />
 
     <xs:group name="xrrl.Documents.class">
         <xs:choice>
@@ -325,11 +326,17 @@
             <xs:element name="nonrule" type="xrrl.nonrule.type" />
         </xs:choice>
     </xs:group>
+    <xs:group name="xrrl.Provision.class">
+        <xs:choice>
+            <xs:element name="provision" type="xrrl.provision.type" />
+            <xs:element name="provisionlist" type="xrrl.provisionlist.type" />
+        </xs:choice>
+    </xs:group>
     <xs:group name="xrrl.Content.class">
         <xs:choice>
             <xs:element ref="properties" />
-            <xs:element name="provision" type="xrrl.provision.type" />
             <xs:element name="block" type="xrrl.block.type" />
+            <xs:group ref="xrrl.Provision.class" />
         </xs:choice>
     </xs:group>
     <xs:group name="xrrl.Property.class">
@@ -337,6 +344,8 @@
             <xs:element name="description" type="xrrl.description.type" />
             <xs:element name="tags" type="xrrl.tags.type" />
             <xs:element name="analysis" type="xrrl.analysis.type" />
+            <xs:element name="date" type="xrrl.date.type" />
         </xs:choice>
     </xs:group>
+    <xs:element name="xrrl" type="xrrl.xrrl.type" />
 </xs:schema>

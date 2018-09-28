@@ -11,8 +11,14 @@
             * code
             * proposedrule
             * nonrule
+            * block
             * provision
-            * provisiongroup
+            * provisionlist
+            * properties
+            * description
+            * tags
+            * tag
+            * analysis
 
         </xs:documentation>
     </xs:annotation>
@@ -93,6 +99,18 @@
         <xs:attributeGroup ref="xrrl.analysis.attlist" />
     </xs:complexType>
 
+    <xs:attributeGroup name="xrrl.date.attlist">
+        <xs:attributeGroup ref="xhtml.Common.attrib" />
+    </xs:attributeGroup>
+
+    <xs:complexType name="xrrl.date.type">
+        <xs:simpleContent>
+            <xs:extension base="xs:date">
+                <xs:attributeGroup ref="xrrl.date.attlist" />
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
     <!-- Content Elements -->
 
     <xs:attributeGroup name="xrrl.properties.attlist">
@@ -113,7 +131,6 @@
         <xs:attributeGroup ref="xrrl.properties.attlist" />
     </xs:complexType>
 
-
     <xs:attributeGroup name="xrrl.addressed.attlist">
         <xs:attribute name="address" type="xs:string"/>
     </xs:attributeGroup>
@@ -126,13 +143,31 @@
     <xs:group name="xrrl.provision.content">
         <xs:sequence>
             <xs:element ref="properties" minOccurs="0" />
-            <xs:group ref="xhtml.Flow.mix" minOccurs="0" maxOccurs="1" />
+            <xs:group ref="xhtml.Flow.mix" minOccurs="0" maxOccurs="unbounded" />
         </xs:sequence>
     </xs:group>
 
     <xs:complexType name="xrrl.provision.type">
         <xs:group ref="xrrl.provision.content" />
         <xs:attributeGroup ref="xrrl.provision.attlist" />
+    </xs:complexType>
+
+    <xs:attributeGroup name="xrrl.provisionlist.attlist">
+        <xs:attributeGroup ref="xhtml.Common.attrib" />
+        <xs:attributeGroup ref="xrrl.addressed.attlist" />
+    </xs:attributeGroup>
+
+    <xs:group name="xrrl.provisionlist.content">
+        <xs:sequence>
+            <xs:element ref="properties" minOccurs="0" />
+            <xs:element ref="introduction" />
+            <xs:group ref="xrrl.Provision.class"  maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:group>
+
+    <xs:complexType name="xrrl.provisionlist.type">
+        <xs:group ref="xrrl.provisionlist.content" />
+        <xs:attributeGroup ref="xrrl.provisionlist.attlist" />
     </xs:complexType>
 
     <xs:attributeGroup name="xrrl.block.attlist">
