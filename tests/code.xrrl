@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xrrl xmlns="http://quantgov.org/xrrl"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://quantgov.org/xrrl.xsd">
+    <code>
+        <description>
+            <h1>
+                Part 25 - Universal Identifier and System for Awards Management
+            </h1>
+        </description>
+        <orglevel address="123" level="Subpart">
+            <description>
+                <p>
+                    This part provides guidance to agencies to establish:
+                </p>
+                <p>
+                    (a) The unique entity identifier as a universal identifier
+                    for Federal financial assistance applicants, as well as
+                    recipients and their direct subrecipients.
+                </p>
+                <p>
+                    (b) The System for Award Management (SAM) as the repository
+                    for standard information about applicants and recipients.
+                </p>
+                <p>
+                    [75 FR 55673, Sept. 14, 2010, as amended at 79 FR 75879,
+                    Dec. 19, 2014; 80 FR 54407, Sept. 10, 2015]
+                </p>
+            </description>
+            <provision address="1234">
+                <p>
+                    This part applies to an agency's grants, cooperative
+                    agreements, loans, and other types of Federal financial
+                    assistance included in the definition of “award” in
+                    §25.305. The requirements in this part must be implemented
+                    for grants and cooperative agreements by October 1, 2010.
+                    The requirements in this part must be implemented for all
+                    other award forms listed in §25.200 requirement at a date
+                    to be specified in the future.
+                </p>
+            </provision>
+            <provision address="1235">
+                <p>
+                    a) General. Through an agency's implementation of the
+                    guidance in this part, this part applies to all entities,
+                    other than those exempted in paragraphs (b), (c), and (d)
+                    of this section, that—
+                </p>
+                <p>
+                    (1) Apply for or receive agency awards; or
+                </p>
+                <p>
+                    (2) Receive subawards directly from recipients of those
+                    agency awards.
+                </p>
+                <p>
+                    (b) Exemptions for individuals. None of the requirements
+                    in this part apply to an individual who applies for or
+                    receives Federal financial assistance as a natural person
+                    (i.e., unrelated to any business or non-profit organization
+                    he or she may own or operate in his or her name).
+                </p>
+                <p>
+                    (c) Exemptions for Federal agencies. The requirement in
+                    this part to maintain a current registration in the SAM
+                    does not apply to an agency of the Federal Government that
+                    receives an award from another agency.
+                </p>
+                <p>
+                    (d) Other exemptions. (1) Under a condition identified in
+                    paragraph (d)(2) of this section, an agency may exempt an
+                    entity from an applicable requirement to obtain a unique
+                    entity identifier, register in the SAM, or both.
+                </p>
+            </provision>
+        </orglevel>
+    </code>
+</xrrl>
