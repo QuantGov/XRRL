@@ -1,6 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xrrl xmlns="http://quantgov.org/xrrl"
-xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:schemaLocation="http://quantgov.org/xrrl.xsd">
-    <rule></rule>
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://quantgov.org/xrrl.xsd">
+    <rule>
+        <properties>
+            <description class="title">Sample Rule</description>
+            <description class="introduction">
+                <p>This is a sample rule demonstrating the general structure of
+                    an XRRL document</p>
+            </description>
+            <tags class="author"  standard="agency_id_standard">
+                <tag value="001">Department of Good Standards</tag>
+                <tag value="001">Office of Machine-Readability</tag>
+            </tags>
+            <analysis class="cost-benefit" href="https://quantgov.org" />
+            <analysis class="niche-analysis" required='false' />
+            <analysis class="suitibility">
+                <h1>Suitibility Analysis</h1>
+                <p>We find this rule suitible for any and all purposes
+                    covered therein.</p>
+            </analysis>
+        </properties>
+        <block>
+            <properties>
+                <description class="title">Part I - Crops</description>
+                <tags class="industry"  standard="naics2007">
+                    <tag value="111">Crop Production</tag>
+                </tags>
+            </properties>
+            <provision>
+                <p>Crops shall be produced such that they are not poisonous</p>
+            </provision>
+            <provision>
+                <p>Plastic children's toys shall not be sold as "crops".</p>
+            </provision>
+        </block>
+        <block>
+            <properties>
+                <description class="title">Part II - Animal</description>
+                <tags class="industry"  standard="naics2007">
+                    <tag value="112">Animal Production</tag>
+                </tags>
+            </properties>
+            <provision>
+                <p>Animals shall be produced such that they do not convey
+                    hideous diseases.</p>
+            </provision>
+            <provision>
+                <p>Plastic children's toys shall not be sold as "Animals".</p>
+            </provision>
+        </block>
+    </rule>
 </xrrl>
