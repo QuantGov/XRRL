@@ -1,64 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xrrl xmlns="http://quantgov.org/xrrl"
-xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:schemaLocation="http://quantgov.org/xrrl.xsd">
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://quantgov.org/xrrl.xsd">
     <rule>
-        <description>
-            <h3>
-                Final Regulatory Flexibility Act Analysis
-            </h3>
-            <p>
-                In accordance with the Regulatory Flexibility Act (RFA)
-                (5 U.S.C. 601-612), AMS is required to examine the impact of
-                the final rule on small entities. Accordingly, AMS has
-                considered the economic impact of this action on such entities.
-            </p>
-        </description>
-        <provision address='1234'>
+        <properties>
+            <description class="title">Sample Rule</description>
+            <description class="introduction">
+                <p>This is a sample rule demonstrating the general structure of
+                    an XRRL document</p>
+            </description>
+            <tags class="author"  standard="agency_id_standard">
+                <tag value="001">Department of Good Standards</tag>
+                <tag value="001">Office of Machine-Readability</tag>
+            </tags>
+            <analysis class="cost-benefit" href="https://quantgov.org" />
+            <analysis class="niche-analysis" required='false' />
+            <analysis class="suitibility">
+                <h1>Suitibility Analysis</h1>
+                <p>We find this rule suitible for any and all purposes
+                    covered therein.</p>
+            </analysis>
+        </properties>
+        <block>
             <properties>
-                <dates>
-                    <date kind='effective_date'>
-                        '2018-01-01'
-                    </date>
-                </dates>
-                <tags kind='industries' standard='naics2007'>
-                    <tag id='111'>Crop Production</tag>
+                <description class="title">Part I - Crops</description>
+                <tags class="industry"  standard="naics2007">
+                    <tag value="111">Crop Production</tag>
                 </tags>
-                <definitions>
-                    <p>
-                        Fiscal year means the 12-month period beginning with
-                        November 1 of any year and ending with October 31 of
-                        the following year, or such other period as determined
-                        by the Board and approved by the Secretary.
-                    </p>
-                </definitions>
             </properties>
-        </provision>
-        <description>
-            <p>
-                In § 1216.51, revise paragraphs (c) and (d), remove paragraph
-                (e), and redesignate paragraphs (f) through (j) as paragraphs
-                (e) through (i) to read as follows:
-            </p>
-        </description>
-        <provision address='1216511'>
-            <p>
-                (c) Such assessments shall be levied on all farmers stock
-                peanuts sold at a rate of $3.55 per ton for Segregation 1
-                peanuts and $1.25 per ton for Segregation 2 peanuts and 3
-                peanuts, as those terms are defined in §§ 996.13(b)-(d) of this
-                title.
-            </p>
-            <p>
-                (d) For peanuts placed under a marketing assistance loan with
-                the Department's Commodity Credit Corporation, the Commodity
-                Credit Corporation, or any entity determined by the Commodity
-                Credit Corporation shall deduct and remit to the Board, from
-                the proceeds of the loan paid to the producer, the assessment
-                per ton as specified in paragraph (c) of this section, no more
-                than 60 days after the last day of the month in which the
-                peanuts were placed under a marketing assistance loan.
-            </p>
-        </provision>
+            <provision>
+                <p>Crops shall be produced such that they are not poisonous</p>
+            </provision>
+            <provision>
+                <p>Plastic children's toys shall not be sold as "crops".</p>
+            </provision>
+        </block>
+        <block>
+            <properties>
+                <description class="title">Part II - Animal</description>
+                <tags class="industry"  standard="naics2007">
+                    <tag value="112">Animal Production</tag>
+                </tags>
+            </properties>
+            <provision>
+                <p>Animals shall be produced such that they do not convey
+                    hideous diseases.</p>
+            </provision>
+            <provision>
+                <p>Plastic children's toys shall not be sold as "Animals".</p>
+            </provision>
+        </block>
     </rule>
 </xrrl>
