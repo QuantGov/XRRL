@@ -8,6 +8,14 @@ BASEDIR = TESTDIR.parent
 XRRL_PATH = BASEDIR.joinpath('xrrl.xsd')
 
 
+EXAMPLES = [
+    TESTDIR.joinpath('rule.xrrl')
+]
+EXAMPLES.extend(
+    BASEDIR.joinpath('examples').glob('**/*.xrrl')
+)
+
+
 def parse(path):
     return lxml.etree.parse(str(path))
 
@@ -46,6 +54,7 @@ def test_model_validity(xsd_schema):
         BASEDIR.joinpath('xrrl-model-1.xsd'))
 
 
-def test_basic_rule(xrrl_schema):
-    doc = parse(TESTDIR.joinpath('rule.xrrl'))
+@pytest.mark.parametrize('path', EXAMPLES)
+def test_examples(xrrl_schema, path):
+    doc = parse(path)
     xrrl_schema.assert_(doc)
